@@ -227,8 +227,8 @@ utc_entry.grid(row=2, column=5, pady=1)
 
 # Entry Default Values
 t = time.localtime()
-lat_entry.insert(0, "")
-lng_entry.insert(0, "")
+lat_entry.insert(0, "42.47461")
+lng_entry.insert(0, "-83.24941")
 mth_entry.insert(0, time.strftime("%m", t))
 day_entry.insert(0, time.strftime("%d", t))
 yrs_entry.insert(0, time.strftime("%Y", t))
@@ -243,8 +243,8 @@ sunsphere_frame.pack()
 sunsphere_canvas = Canvas(sunsphere_frame, bg="white", height=600, width=600)
 sunsphere_canvas.pack()
 
-compass_x = sunsphere_canvas.create_line(300, 40, 300, 560)
-compass_y = sunsphere_canvas.create_line(40, 300, 560, 300)
+compass_x = sunsphere_canvas.create_line(300, 40, 300, 560, fill="blue")
+compass_y = sunsphere_canvas.create_line(40, 300, 560, 300, fill="blue")
 compass_N = sunsphere_canvas.create_text(300, 25, text="N", font=('Helvetica', 20))
 compass_S = sunsphere_canvas.create_text(300, 575, text="S", font=('Helvetica', 20))
 compass_E = sunsphere_canvas.create_text(575, 300, text="E", font=('Helvetica', 20))
@@ -252,11 +252,10 @@ compass_W = sunsphere_canvas.create_text(25, 300, text="W", font=('Helvetica', 2
 
 outer_circle = sunsphere_canvas.create_oval(50, 50, 550, 550)
 
-sunrise_line = sunsphere_canvas.create_line(300, 300, 300, 300-250)
-#noon_line = sunsphere_canvas.create_line(300, 300, 300, 300-250)
-sunset_line = sunsphere_canvas.create_line(300, 300, 300, 300-250)
+sunrise_line = sunsphere_canvas.create_line(300, 300, 300, 300-250, fill="orange")
+sunset_line = sunsphere_canvas.create_line(300, 300, 300, 300-250, fill="orange")
 
-sun_path = sunsphere_canvas.create_arc(50, 50, 550, 550, start=86.686-90, extent=-273.523+90)
+sun_path = sunsphere_canvas.create_arc(50, 50, 550, 550, start=86.686-90, extent=-273.523+90, outline="orange")
 sun_azumith = sunsphere_canvas.create_line(300, 300, 300, 300-250)
 sun = sunsphere_canvas.create_oval((300-10), ((300-250)-10), (300+10), ((300-250)+10), fill="yellow")
 
