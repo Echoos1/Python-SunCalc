@@ -5,6 +5,10 @@ import datetime
 
 lat = 42.47490
 lng = -83.24970
+date = "09/16/2021"
+date_format = datetime.datetime.strptime(date, '%m/%d/%Y')
+date_year = datetime.datetime.strptime(date, '%m/%d/%Y')
+now = datetime.datetime.now()
 
 timezone = -4  # Time difference from UTC time, accounting for daylight or standard time
 LT = 13.5  # Local time, in 24 hour decimal format
@@ -48,6 +52,8 @@ LT_Minute = round((LT-math.floor(LT))*60)
 print(f'Latitude: {lat}\n'
       f'Longitude: {lng}\n'
       f'Timezone: UTC{timezone}\n'
+      f'Date: {date_format}, {date_year}\n'
+      f'Now: {now}\n'
       f'Local Time: {LT_Hour}:{LT_Minute} {AM_PM}\n\n'
       f'Declination: {dec}\n'
       f'Equation of Time: {EoT}\n'
