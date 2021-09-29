@@ -85,6 +85,8 @@ def calculate_position(*args):
     sunset_disp = datetime.strptime(str(set0), "%H:%M")
     sunset_disp = sunset_disp.strftime("%I:%M %p")
 
+    print(set0)
+
     LST_disp = datetime.strptime(str(LST0), "%H:%M")
     LST_disp = LST_disp.strftime("%I:%M %p")
 
