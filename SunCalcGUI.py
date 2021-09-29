@@ -169,7 +169,7 @@ def calculate_position(*args):
 
 root = Tk()
 root.title("Sun Calculator")
-root.geometry("650x800")
+root.geometry("650x820")
 root.resizable(0, 0)
 
 # Title frame
