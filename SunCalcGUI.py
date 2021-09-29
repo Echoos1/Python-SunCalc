@@ -116,12 +116,14 @@ def calculate_position(*args):
     result_label_1 = Label(result_frame, justify=RIGHT, text=f'Declination: {round(dec, 2)}°\n'
                                             f'Local Solar Time Meridian: {round(LSTM, 2)}°\n'
                                             f'Local Solar Time: {LST_disp}\n'
-                                            f'Sunrise: {sunrise_disp}')
-    result_label_center = Label(result_frame, text=f'|\n|\n|\n|\n|')
+                                            f'Sunrise: {sunrise_disp}\n'
+                                                             f'Daylight: {round(sunset-sunrise, 2)} Hours')
+    result_label_center = Label(result_frame, text=f'|\n|\n|\n|\n|\n|')
     result_label_2 = Label(result_frame, justify=LEFT, text=f'Equation of Time: {round(EoT, 2)} minutes\n'
                                             f'Time Correction: {round(TC, 2)} minutes\n'
                                             f'Hour Angle: {round(HRA, 2)}°\n'
-                                            f'Sunset: {sunset_disp}')
+                                            f'Sunset: {sunset_disp}\n'
+                                                            f'Darkness: {round(24-(sunset-sunrise), 2)} Hours')
     sun_label_1 = Label(result_frame, justify=RIGHT, text=f'Solar Azimuth: {round(Az, 4)}°', font=('Helvetica', 10, 'bold'))
     sun_label_2 = Label(result_frame, justify=LEFT, text=f'Solar Altitude: {round(a, 4)}°', font=('Helvetica', 10, 'bold'))
     result_label_1.grid(row=0, column=0, sticky=E)
