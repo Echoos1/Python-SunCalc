@@ -64,6 +64,7 @@ def calculate_position(*args):
         risemin = 0
         risehr += 1
     rise0 = f'{risehr}:{risemin}'
+    print(f'rise0{rise0}')
 
     sethr = math.floor(sunset)
     setmin = (round((sunset - sethr) * 60))
